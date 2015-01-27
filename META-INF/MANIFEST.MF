@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Require-Bundle: com.dynatrace.diagnostics.sdk
+Bundle-Vendor: Brian Perrault
+Bundle-ClassPath: .,lib/com.dynatrace.diagnostics.sdk.jar,lib/commons-
+ lang3-3.2.1.jar
+Bundle-Version: 1.0.0
+Bundle-Name: HPOO Run Flow Action
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.hpoo.runFlow;singleton:=true
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 5.5.0 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.hpoo.runFlow" name="HPOO Run Flow Action">
+    <information>
+      <category value="" />
+      <displayname value="HPOO Run Flow Action" />
+      <description value="Executes an HPOO flow during an incident trigger" />
+      <supportlevel value="unsupported" />
+    </information>
+    <configuration>
+      <property key="hpooProtocol" label="HPOO Protocol" type="list" description="The protocol to use with the HPOO site." default="https">
+        <list>
+          <item value="http" />
+          <item value="https" />
+        </list>
+      </property>
+      <property key="hpooURL" label="HPOO URL" type="string" description="The URL to the HPOO site." default="hpoo.sentry.com" multiline="false" />
+      <property key="hpooPort" label="HPOO Port" type="string" description="The port used for the restful interface of the HPOO site." default="8444" multiline="false" />
+      <property key="flowPath" label="HPOO Flow Path" type="string" description="The path to the HPOO flow.&#xD;&#xA;EX: Library/Sentry/IOC/" default="Library/" multiline="false" />
+      <property key="flowName" label="HPOO Flow Name" type="string" description="The name of the HPOO flow to execute.&#xD;&#xA;EX: testFlow" default="" multiline="false" />
+      <property key="flowParameters" label="HPOO Flow Parameters" type="string" description="List of Parameters to pass to the HPOO flow.  For a full list of parameters consult the documentation. EX:&#xD;&#xA;host={$host}&#xD;&#xA;protocol=ssh&#xD;&#xA;port=22" default="" multiline="true" />
+      <property key="hpooUser" label="HPOO Username" type="string" description="The Username to execute the flow with." default="" multiline="false" />
+      <property key="hpooPass" label="HPOO Password" type="password" description="The password for the username to execute the HPOO flow with." default="" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.action" id="com.hpoo.runFlow.action" name="HPOO Run Flow Action">
+    <plugin configid="com.hpoo.runFlow" class="com.hpoo.runFlow.RunFlow" />
+  </extension>
+</plugin>
+
