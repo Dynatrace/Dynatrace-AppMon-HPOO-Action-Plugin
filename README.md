@@ -1,4 +1,4 @@
-##HPOO Action Plugin
+## HPOO Action Plugin
 
 The HPOO Action Plug-in will allow you to call the HPOO REST interface to execute a specified work flow. Just add Action to your desired dynaTrace incident.   
 
